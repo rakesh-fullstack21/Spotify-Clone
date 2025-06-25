@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  transition: background 1s;
+}
+
+nav {
+  background-color: #1db954;
+  padding: 15px;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.song-list {
+  width: 40%;
+  min-width: 250px;
+}
+
+.song-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.song-list li {
+  background-color: #282828;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.song-list li:hover {
+  background-color: #1db954;
+  color: black;
+  transform: scale(1.02);
+}
+
+.player {
+  width: 40%;
+  min-width: 250px;
+  text-align: center;
+}
+
+.player img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+
+img.rotating {
+  animation: rotateCover 5s linear infinite;
+}
+
+@keyframes rotateCover {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#progressBar,
+#volume {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.controls button:hover {
+  transform: scale(1.2);
+}
+
+body.playing {
+  animation: pulseBg 2s infinite;
+}
+
+@keyframes pulseBg {
+  0% { background-color: #121212; }
+  50% { background-color: #1a1a1a; }
+  100% { background-color: #121212; }
+}
+
