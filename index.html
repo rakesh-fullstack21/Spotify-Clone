@@ -14,21 +14,23 @@
 
   <div class="container">
     <div class="song-list">
+      <input type="text" id="searchBox" placeholder="Search songs..." />
       <h2>Songs</h2>
-      <ul id="songItems">
-        <!-- Songs will be added using JS -->
-      </ul>
+      <ul id="songItems"></ul>
     </div>
 
     <div class="player">
       <img id="cover" src="covers/cover1.jpg" alt="Cover Image" />
       <h3 id="currentSong">Song Name</h3>
       <input type="range" id="progressBar" value="0" />
+      <p id="time">0:00 / 0:00</p>
       <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
       <div class="controls">
+        <button id="loopBtn">🔁</button>
         <button id="prev">⏮️</button>
         <button id="play">▶️</button>
         <button id="next">⏭️</button>
+        <button id="shuffleBtn">🔀</button>
       </div>
     </div>
   </div>
@@ -36,4 +38,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 

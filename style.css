@@ -3,7 +3,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #121212;
   color: white;
-  transition: background 1s;
 }
 
 nav {
@@ -11,7 +10,6 @@ nav {
   padding: 15px;
   text-align: center;
   font-size: 24px;
-  color: white;
 }
 
 .container {
@@ -26,6 +24,14 @@ nav {
   min-width: 250px;
 }
 
+.song-list input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
 .song-list ul {
   list-style: none;
   padding: 0;
@@ -37,13 +43,12 @@ nav {
   margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .song-list li:hover {
   background-color: #1db954;
   color: black;
-  transform: scale(1.02);
 }
 
 .player {
@@ -68,22 +73,17 @@ img.rotating {
   100% { transform: rotate(360deg); }
 }
 
-#progressBar,
-#volume {
+#progressBar, #volume {
   width: 100%;
-  margin-top: 15px;
-}
-
-.controls {
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .controls button {
   background: none;
   border: none;
-  font-size: 30px;
+  font-size: 28px;
   color: white;
-  margin: 0 15px;
+  margin: 0 10px;
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -92,13 +92,19 @@ img.rotating {
   transform: scale(1.2);
 }
 
-body.playing {
-  animation: pulseBg 2s infinite;
+#time {
+  margin: 5px 0;
 }
 
-@keyframes pulseBg {
-  0% { background-color: #121212; }
-  50% { background-color: #1a1a1a; }
-  100% { background-color: #121212; }
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .song-list, .player {
+    width: 90%;
+  }
 }
+
 
