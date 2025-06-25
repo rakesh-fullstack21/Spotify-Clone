@@ -6,13 +6,22 @@
   <title>Spotify Clone</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="dark">
 
   <nav>
     <h1>🎵 Spotify Clone</h1>
+    <button id="themeToggle">🌙</button>
   </nav>
 
   <div class="container">
+    <div class="playlist">
+      <h2>Playlists</h2>
+      <ul id="playlistItems">
+        <li onclick="loadPlaylist('default')">🎧 Default Playlist</li>
+        <li onclick="loadPlaylist('chill')">🌊 Chill Vibes</li>
+      </ul>
+    </div>
+
     <div class="song-list">
       <input type="text" id="searchBox" placeholder="Search songs..." />
       <h2>Songs</h2>
@@ -35,8 +44,19 @@
     </div>
   </div>
 
+  <!-- Mini Player -->
+  <div class="mini-player" id="miniPlayer">
+    <img src="covers/cover1.jpg" id="miniCover" />
+    <div><p id="miniTitle">Song 1</p></div>
+    <button id="miniPlayPause">⏸️</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+ 
 
 

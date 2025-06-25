@@ -1,15 +1,35 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  transition: 0.3s;
+}
+
+body.dark {
   background-color: #121212;
   color: white;
 }
 
+body.light {
+  background-color: #f4f4f4;
+  color: black;
+}
+
 nav {
-  background-color: #1db954;
   padding: 15px;
   text-align: center;
   font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark nav {
+  background-color: #1db954;
+  color: white;
+}
+body.light nav {
+  background-color: #e0e0e0;
+  color: black;
 }
 
 .container {
@@ -19,9 +39,10 @@ nav {
   flex-wrap: wrap;
 }
 
-.song-list {
-  width: 40%;
-  min-width: 250px;
+.song-list,
+.playlist {
+  width: 25%;
+  min-width: 220px;
 }
 
 .song-list input {
@@ -32,12 +53,14 @@ nav {
   border: none;
 }
 
-.song-list ul {
+.song-list ul,
+.playlist ul {
   list-style: none;
   padding: 0;
 }
 
-.song-list li {
+.song-list li,
+.playlist li {
   background-color: #282828;
   padding: 10px;
   margin-bottom: 10px;
@@ -46,9 +69,21 @@ nav {
   transition: 0.3s;
 }
 
-.song-list li:hover {
+.song-list li:hover,
+.playlist li:hover {
   background-color: #1db954;
   color: black;
+}
+
+body.light .song-list li,
+body.light .playlist li {
+  background-color: #fff;
+  color: black;
+}
+body.light .song-list li:hover,
+body.light .playlist li:hover {
+  background-color: #1db954;
+  color: white;
 }
 
 .player {
@@ -87,7 +122,9 @@ img.rotating {
   cursor: pointer;
   transition: transform 0.2s;
 }
-
+body.light .controls button {
+  color: black;
+}
 .controls button:hover {
   transform: scale(1.2);
 }
@@ -96,15 +133,46 @@ img.rotating {
   margin: 5px 0;
 }
 
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Mini Player */
+.mini-player {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #1db954;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  box-shadow: 0 0 10px black;
+  display: none;
+}
+
+.mini-player img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
   }
 
-  .song-list, .player {
+  .song-list, .player, .playlist {
     width: 90%;
   }
 }
+
+
 
 
